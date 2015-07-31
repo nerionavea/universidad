@@ -1,0 +1,11 @@
+%h3 Usuarios
+%a.btn.btn-default{:type => 'button', 'aria-label' => 'Añadir Usuario', :href => '/admin/users/new'}
+	%span.glyphicon.glyphicon-plus
+	Añadir
+- @users.each do |user|
+	%p
+		%span.glyphicon.glyphicon-user
+		#{user.nick}
+		%a{ :href => "/admin/users/edit/#{user.id}"}
+			%span.glyphicon.glyphicon-pencil
+		%p Activo: #{user.active}

@@ -1,0 +1,4 @@
+%form{:method => 'post', :action => "/admin/users/edit/#{@user.id}"}
+	%input{:type => 'hidden', :name => '_method', :value => 'put'}
+	= haml :user_form
+	%input.btn.btn-default{:type => 'submit', :value => 'Guardar Cambios'}

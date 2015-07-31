@@ -1,0 +1,15 @@
+%h3 Nueva Transaccion
+%form
+	.form-group
+		%label Fecha
+		%input.form-control{:name => 'fecha', :id => 'input_fecha', :required => true}
+	.form-group
+		%label Venta
+		%input.form-control#input_venta{:name => 'venta', :id => 'nombre', :required => true}
+	.form-group
+		%label Abono
+		%input.form-control#input_abono{:name => 'abono', :id => 'apellido', :required => true}		
+	%btn.btn.btn-default#save_transaction
+		%span.glyphicon.glyphicon-ok		
+	%btn.btn.btn-default#cancel_transaction
+		%span.glyphicon.glyphicon-remove

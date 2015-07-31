@@ -1,0 +1,9 @@
+!!!
+%html
+	=haml :head
+	%body
+		.row
+			%section#login.col-md-4.col-md-offset-4.vcenter= yield
+			%img{:src => '/images/portal.png', :style => 'position: absolute; left:910px;, top:50px;'}
+
+	%footer

@@ -1,0 +1,23 @@
+%h3 Transacciones
+%table.table.table-striped
+	%thead
+		%td
+			Fecha
+		%td
+			Venta
+		%td
+			Abono
+		%td
+			Saldo
+	-@transactions.each do |transaction|
+		%tr
+			%td
+				#{transaction.fecha}
+			%td
+				#{transaction.venta}
+			%td
+				#{transaction.abono}
+			%td
+				#{transaction.saldo}
+		%td{:colspan => 7, :style => 'text-align: center;'}
+

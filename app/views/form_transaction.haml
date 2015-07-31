@@ -1,0 +1,41 @@
+.container-fluid
+	.row
+		.col-md-12
+			.buttons-bar{:style => 'float:right;'}
+				%btn.btn.btn-default{'data-toggle' => "tooltip", :title => "Añadir Cliente",'data-placement' => 'bottom', 'data-toggle' => 'modal', 'data-target' => '#form_customer_modal'}
+					%span.glyphicon.glyphicon-plus
+				%btn#print.btn.btn-default{'data-toggle' => "tooltip", :title => "Imprimir",'data-placement' => 'bottom'}
+					%span.glyphicon.glyphicon-print
+	.row
+
+		.col-md-4#customer
+			=haml :form_clientes
+		.col-md-8#table_transactions
+.modal.fade#form_customer_modal{:tabindex => '-1', :role => 'dialog', 'aria-labelledby' => 'formCustomerModalLabel'}
+	.modal-dialog{:role => 'document'}
+		.modal-content
+			.modal-header
+				%button.close{:type => 'button', 'data-dismiss' => 'modal', 'aria-label' => 'Close'}
+					%span{'aria-hidden' => true}
+						&times;
+				%h4.modal-title#formCustomerModalLabel
+					Nueva Transaccion
+			.modal-body
+				%form#form_clientes
+					.form-group
+						%label Venta
+						.input-group
+							%input.form-control{:id => 'input_venta', :required => true, 'aria-describedby' => "basic-addon2"}
+							%span.input-group-addon#basic-addon2
+								Bs.F
+					.form-group
+						%label Abono
+						.input-group
+							%input.form-control{:id => 'input_abono', :required => true, 'aria-describedby' => "basic-addon2"}
+							%span.input-group-addon#basic-addon2
+								Bs.F		
+			.modal-footer
+				%button.btn.btn-default{:type => 'button', 'data-dismiss' => 'modal'}
+					Cancelar
+				%button.btn.btn-danger#guardar_transaccion{:type => 'button', 'data-dismiss' => 'modal'}
+					Guardar

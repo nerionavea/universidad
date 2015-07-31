@@ -1,0 +1,9 @@
+.form-group
+	%label Usuario
+	%input.form-control{:name => 'user[nick]', :id => 'user', :required => true, :value => "#{@user.nick}"}
+.form-group
+	%label Contraseña
+	%input.form-control{:name => 'user[password]', :id => 'password', :required => true, :type => 'password'}
+.form-group
+	%label Repita Contraseña
+	%input.form-control{:name => 'user[password2]', :id => 'password', :required => true, :type => 'password'}

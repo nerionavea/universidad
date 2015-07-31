@@ -1,0 +1,24 @@
+%h3 Reportes por Saldo
+%table.table.table-striped#table_transactions
+	%thead
+		%td
+			Cedula
+		%td
+			Nombre
+		%td
+			Apellido
+		%td
+			Saldo
+	-@customers.each do |customer|
+		%tr
+			%td
+				#{customer.identification}
+			%td
+				#{customer.first_name}
+			%td
+				#{customer.last_name}
+			%td
+				#{customer.transactions.last.saldo}
+		%td{:colspan => 7, :style => 'text-align: center;'}
+%btn#print.btn.btn-default{'data-toggle' => "tooltip", :title => "Imprimir",'data-placement' => 'bottom'}
+	%span.glyphicon.glyphicon-print

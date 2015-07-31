@@ -1,0 +1,27 @@
+%h3 Cliente
+%form#form_clientes
+	.form-group
+		%label Cedula de Identidad
+		.input-group
+			.input-group-btn
+				%button#dropdown-tipo-de-identificacion.btn.btn-default.dropdown-toggle{:type => 'button', 'data-toggle' => 'dropdown', 'aria-haspopup' => true, 'aria-expanded' => false}
+					V
+					%span.caret
+				%ul.dropdown-menu
+					%li
+						%a#selectv V
+					%li
+						%a#selecte E
+					%li
+						%a#selectg G
+					%li
+						%a#selectj J
+			%input.form-control{:name => 'customer[identification]', :id => 'input_cedula', :required => true, :style => 'float:right;'}
+	.form-group
+		%label Nombre
+		%input.form-control{:name => 'customer[first_name]', :id => 'form_nombre', :required => true}
+	.form-group
+		%label Apellido
+		%input.form-control{:name => 'customer[last_name]', :id => 'form_apellido', :required => true}
+	%a.btn.btn-danger#guardar_cliente{:type => 'submit', :style => 'float:right'}
+		Guardar

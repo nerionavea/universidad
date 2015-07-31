@@ -1,0 +1,33 @@
+%h3 Cuentas
+%table.table.table-striped
+	%thead
+		%td
+			Fecha
+		%td
+			Venta
+		%td
+			Abono
+		%td
+			Saldo
+	-if @customer.transactions != nil
+		- @customer.transactions.each do |transaction|
+			%tr
+				%td
+					#{transaction.fecha}
+				%td
+					#{transaction.venta}
+				%td
+					#{transaction.abono}
+				%td
+					#{transaction.saldo}
+	-else
+		%tr
+			%td{:colspan => 4}
+				El cliente no posee transacciones
+	%tr
+		%td{:colspan => 4, :style => 'text-align: center;'}
+			%btn#add_transaction.btn.btn-default
+				%span.glyphicon.glyphicon-plus
+			%btn#print_transaction_list.btn.btn-default
+				%span.glyphicon.glyphicon-print
+
